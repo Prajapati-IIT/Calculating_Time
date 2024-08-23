@@ -1,18 +1,21 @@
-import time
-import numpy as np
-
 d_solid = 0.000348
 k_gas = 0.02
-vel = 0.44
-Pr = 0.88625
+vel = 0.22
+Pr = 0.886265
 Re = 10.2936
-eg = 0.744461
+eg=0.744461
 
-start_time = time.time() # start time calculation
+start_time = time.time()  # Start time calculation
 
-Nu = (7-(10*eg)+(5*eg**2))*(1+0.7*Re**0.2*Pr**(1/3))+((1.33-(2.4*eg)+(1.2*eg**2))*Re**0.7*Pr**(1/3))
+
+Nu = (7-(10*eg)+(5*eg**2))*(1+0.7*Re**0.2*Pr**(1/3))+((1.33-(2.4*eg)+1.2*eg**2)*(Re**0.7)*(Pr**(1/3)))
 
 h = Nu * k_gas / d_solid
+    
+print(h)
+
+
+
 
 end_time = time.time()
-print("Time for calculation:", end_time-start_time, "seconds")
+print("Time for calculation:", end_time - start_time, "seconds")
