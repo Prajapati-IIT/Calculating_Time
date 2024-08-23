@@ -74,8 +74,8 @@ def NN(input):
 
     return output
 
-d_solid = 0.000348
-k_gas = 0.02
+d_solid = 0.002
+k_gas = 25
 vel = 0.22
 Pr = 0.886265
 Re = 10.2936
@@ -90,6 +90,9 @@ Nu = NN(input_data)
 h = Nu * k_gas / d_solid
     
 print(h)
+
+
+
 
 end_time = time.time()
 print("Time for calculation:", end_time - start_time, "seconds")
